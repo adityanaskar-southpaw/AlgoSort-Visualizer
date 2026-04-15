@@ -1,18 +1,14 @@
 import matplotlib.pyplot as plt
 from data_generator import generate_random
 
-# -----------------------------
-# VISUALIZE FUNCTION
-# -----------------------------
+# visual function
 def draw_bars(arr, title, color="blue"):
     plt.clf()
     plt.bar(range(len(arr)), arr, color=color)
     plt.title(title)
     plt.pause(0.05)
 
-# -----------------------------
-# BUBBLE SORT VISUAL
-# -----------------------------
+#bubble sort visual
 def bubble_sort_visual(arr):
     n = len(arr)
     for i in range(n):
@@ -21,9 +17,7 @@ def bubble_sort_visual(arr):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
             draw_bars(arr, "Bubble Sort", "blue")
 
-# -----------------------------
-# QUICK SORT VISUAL
-# -----------------------------
+#quick sort visual
 def quick_sort_visual(arr, low, high):
     if low < high:
         pi = partition(arr, low, high)
@@ -43,9 +37,7 @@ def partition(arr, low, high):
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
     return i + 1
 
-# -----------------------------
-# MERGE SORT VISUAL
-# -----------------------------
+# merge sort visual
 def merge_sort_visual(arr, l, r):
     if l < r:
         m = (l + r) // 2
@@ -82,9 +74,7 @@ def merge(arr, l, m, r):
         k += 1
         draw_bars(arr, "Merge Sort", "orange")
 
-# -----------------------------
-# MAIN FUNCTION
-# -----------------------------
+# main fucntion
 def run_visual():
     data = generate_random(30)
 
